@@ -13,10 +13,27 @@ public class BoundaryPrendreEtal {
 	}
 
 	public void prendreEtal(String nomVendeur) {
-		//TODO a completer
+		if (controlPrendreEtal.verifierIdentite(nomVendeur)) {
+			System.out.println("Bonjour "+nomVendeur+", je vais regarder si je peux vous trouver un etal.");
+			if(controlPrendreEtal.resteEtals()){
+				System.out.println("C'est parfait il me reste un étal pour vous!");
+				installerVendeur(nomVendeur);
+			}else {
+				System.out.println("Désolé "+nomVendeur+" je n'ai plus d'étal qui ne soit pas déjà occupé");
+			}
+		}else {
+			System.out.println("Je suis désolé "+nomVendeur+" mais je ne peux vous aider.");
+		}
 	}
 
 	private void installerVendeur(String nomVendeur) {
-		//TODO a completer
+		System.out.println("Il me faudrait quelques renseignements :");
+		System.out.println("Quel produit souhaitez-vous vendre?");
+		String produit=scan.nextLine();
+		int nbProduit=Clavier.entrerEntier("Combien souhaitez-vous en vendre?");
+		int numeroEtal=controlPrendreEtal.prendreEtal(nomVendeur, produit, nbProduit);
+		if (numeroEtal!=-1) {
+			System.out.println("Le vendeur "+nomVendeur+" s'est installé à l'étal n° "+numeroEtal);
+		}
 	}
 }
