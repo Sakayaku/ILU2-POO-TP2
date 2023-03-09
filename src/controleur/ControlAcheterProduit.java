@@ -16,4 +16,10 @@ public class ControlAcheterProduit {
 	}
 
 	//TODO a completer
+	public boolean isHabitant(String nom) {
+		return controlVerifierIdentite.verifierIdentite(nom);
+	}
+	public acheter(String produit) {
+		controlTrouverEtalVendeur.trouverEtalVendeur(produit)
+	}
 }
