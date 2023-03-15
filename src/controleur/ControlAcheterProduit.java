@@ -14,12 +14,25 @@ public class ControlAcheterProduit {
 		this.controlVerifierIdentite = controlVerifierIdentite;
 		this.controlTrouverEtalVendeur = controlTrouverEtalVendeur;
 	}
-
-	//TODO a completer
 	public boolean isHabitant(String nom) {
 		return controlVerifierIdentite.verifierIdentite(nom);
 	}
-	public acheter(String produit) {
-		controlTrouverEtalVendeur.trouverEtalVendeur(produit)
+	public boolean produitExistant(String produit) {
+		return village.rechercherVendeursProduit(produit)!=null;
+	}
+	public void commercantVendantProduit(String produit) {
+		int nombreCommercants=village.rechercherVendeursProduit(produit).length;
+		for (int i=0;i<nombreCommercants;i++) {
+			System.out.println((i+1)+" - "+village.rechercherVendeursProduit(produit)[i].getNom());
+		}
+	}
+	public String choisirCommercant(int numeroCommercant, String produit) {
+		if (numeroCommercant<village.rechercherVendeursProduit(produit).length && (village.rechercherVendeursProduit(produit)[numeroCommercant]!=null)) {
+				 return village.rechercherVendeursProduit(produit)[numeroCommercant].getNom();
+		}
+		return null;
+	}
+	public int acheter(String vendeur, int quantite) {
+		return controlTrouverEtalVendeur.trouverEtalVendeur(vendeur).acheterProduit(quantite);
 	}
 }
