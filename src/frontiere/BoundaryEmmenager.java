@@ -51,6 +51,6 @@ public class BoundaryEmmenager {
 			effetPotionMin=Clavier.entrerEntier("Quelle est la force de potion la plus faible que vous produisez ?");
 			effetPotionMax=Clavier.entrerEntier("Quelle est la force de potion la plus forte que vous produisez ?");
 		}
-		controlEmmenager.ajouterDuide(nomVisiteur, force, effetPotionMin, effetPotionMax);
+		controlEmmenager.ajouterDruide(nomVisiteur, force, effetPotionMin, effetPotionMax);
 	}
 }
