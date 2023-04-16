@@ -16,7 +16,7 @@ class ControlAfficherVillageTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		System.out.println("Initialisation...");
-		village= new Village("Le village des Irréductibles",10,5);
+		village= new Village("Le village des IrrÃ©ductibles",10,5);
 		abraracourcix=new Chef ("Abraracourcix",10,village);
 		village.setChef(abraracourcix);
 	}
@@ -37,7 +37,7 @@ class ControlAfficherVillageTest {
 	@Test
 	void testDonnerNomVillage() {
 		ControlAfficherVillage controlAfficherVillage= new ControlAfficherVillage(village);
-		assertEquals(controlAfficherVillage.donnerNomVillage(),"Le village des Irréductibles");
+		assertEquals(controlAfficherVillage.donnerNomVillage(),"Le village des IrrÃ©ductibles");
 	}
 
 	@Test

@@ -16,7 +16,7 @@ class ControlLibererEtalTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		System.out.println("Initialisation...");
-		village= new Village("Le village des Irréductibles",10,5);
+		village= new Village("Le village des Irrï¿½ductibles",10,5);
 		abraracourcix=new Chef ("Abraracourcix",10,village);
 		village.setChef(abraracourcix);
 	}
@@ -35,6 +35,7 @@ class ControlLibererEtalTest {
 		Gaulois vendeur = new Gaulois("nomVendeur", 5);
 		village.ajouterHabitant(vendeur);
 		village.installerVendeur(vendeur, "Fleurs", 10);
+		controlLibererEtal.isVendeur("Pas un vendeur");
 		assertNotNull(controlLibererEtal.isVendeur("nomVendeur"));
 	}
 

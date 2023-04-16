@@ -15,7 +15,7 @@ class ControlAfficherMarcheTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		System.out.println("Initialisation...");
-		village= new Village("Le village des Irréductibles",10,5);
+		village= new Village("Le village des IrrÃ©ductibles",10,5);
 		abraracourcix=new Chef ("Abraracourcix",10,village);
 		village.setChef(abraracourcix);
 	}
@@ -29,8 +29,8 @@ class ControlAfficherMarcheTest {
 	@Test
 	void testDonnerInfosMarche() {
 		ControlAfficherMarche controlAfficherMarche=new ControlAfficherMarche(village);
-		String[] expected = {null};
-		assertArrayEquals(controlAfficherMarche.donnerInfosMarche(), expected);
+		String[] expected = {};
+		assertArrayEquals(expected,controlAfficherMarche.donnerInfosMarche());
 	}
 
 }

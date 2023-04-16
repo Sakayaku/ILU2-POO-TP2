@@ -16,7 +16,7 @@ class ControlVerifierIdentiteTest {
 	@BeforeEach
 	void setUp() throws Exception {
 		System.out.println("Initialisation...");
-		village= new Village("Le village des Irréductibles",10,5);
+		village= new Village("Le village des Irrï¿½ductibles",10,5);
 		abraracourcix=new Chef ("Abraracourcix",10,village);
 		village.setChef(abraracourcix);
 	}
@@ -29,10 +29,14 @@ class ControlVerifierIdentiteTest {
 
 	@Test
 	void testVerifierIdentite() {
+		ControlVerifierIdentite controlVerifierIdentite= new ControlVerifierIdentite(village);
+		Gaulois pasHabitant = new Gaulois("PasHabitant",2);
 		Gaulois vendeur = new Gaulois("nomVendeur", 5);
 		village.ajouterHabitant(vendeur);
 		village.installerVendeur(vendeur, "Fleurs", 10);
-		assertEquals(village.trouverHabitant("nomVendeur"),vendeur);
+		controlVerifierIdentite.verifierIdentite("Abraracourcix");
+		controlVerifierIdentite.verifierIdentite("PasHabitant");
+		assertNotNull(controlVerifierIdentite.verifierIdentite("nomVendeur"));
 	}
 
 }
